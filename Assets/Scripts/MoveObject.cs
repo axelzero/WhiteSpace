@@ -11,7 +11,33 @@ public class MoveObject : MonoBehaviour
 
     public GameObject fx;
 
+    public PleyerController Ship;
+
+    public PauseMenu pauseMenu;
+
     private bool isExit;
+
+    private void Start()
+    {
+        if (gameObject.tag == "Enemy")
+        {
+            speed = PlayerPrefs.GetFloat("speedEnemy");
+        }
+        else if (gameObject.tag == "enemyBull")
+        {
+            speed = 4f + PlayerPrefs.GetFloat("speedEnemy");
+        }
+        try
+        {
+            Ship = GameObject.Find("Player").GetComponent<PleyerController>();
+            pauseMenu = GameObject.Find("PauseMenu").GetComponent<PauseMenu>();
+        }
+        catch (System.Exception)
+        {
+
+        }
+    }
+
     void Update()
     {
         transform.Translate(moveDir * Time.deltaTime * speed);
@@ -24,11 +50,28 @@ public class MoveObject : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (!isExit && Time.timeScale == 1)
+        if (Ship != null )
         {
-            GameObject p = Instantiate(fx, transform.position, Quaternion.identity) as GameObject;
-            p.GetComponent<ParticleSystem>().Play();
-            Destroy(p, p.GetComponent<ParticleSystem>().main.duration);
+            try
+            {
+                if (!isExit && Time.timeScale == 1 && !Ship.isOver && pauseMenu == null)
+                {
+                    GameObject p = Instantiate(fx, transform.position, Quaternion.identity) as GameObject;
+                    p.GetComponent<ParticleSystem>().Play();
+                    Destroy(p, p.GetComponent<ParticleSystem>().main.duration);
+                }
+                else if (!isExit && Time.timeScale == 1 && !Ship.isOver && pauseMenu.Pause == false)
+                {
+                    GameObject p = Instantiate(fx, transform.position, Quaternion.identity) as GameObject;
+                    p.GetComponent<ParticleSystem>().Play();
+                    Destroy(p, p.GetComponent<ParticleSystem>().main.duration);
+                }
+            }
+            catch (System.Exception)
+            {
+                
+            }
+            
         }
     }
 

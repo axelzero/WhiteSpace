@@ -17,16 +17,17 @@ public class BonusLife : MonoBehaviour {
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            if (Ship.lifePoints < 9)
+            if (Ship.lifePoints < Ship.startLifePoints)
             {
                 Ship.lifePoints += 1;
+                Ship.sliderHP.value = Ship.lifePoints;
             }
             else
             {
-                Ship.lifePoints = 10;
+                Ship.lifePoints = Ship.startLifePoints;
             }
             sm.PlaySound(6);
-            Ship.ChangeLife();
+            //Ship.ChangeLife();
             Destroy(gameObject);
         }
 	}

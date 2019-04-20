@@ -18,9 +18,19 @@ public class Bonus : MonoBehaviour {
 
     private void Update()
     {
-        if (lifePoints == 0 && !isDead)
+        if (lifePoints <= 0 && !isDead)
         {
             Boom();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (hit)
+            {
+                lifePoints--;
+            }
         }
     }
 

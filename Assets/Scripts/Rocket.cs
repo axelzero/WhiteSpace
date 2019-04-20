@@ -5,6 +5,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour {
 
     public int damage;
+    private int health = 3;
 
     public SoundManager sm;
 
@@ -24,9 +25,13 @@ public class Rocket : MonoBehaviour {
 
         if (coll.gameObject.CompareTag("enemyBull"))
         {
+            health--;
             Destroy(coll.gameObject);
-            sm.PlaySound(0);
-            Destroy(gameObject);
+            if (health <= 0)
+            {
+                sm.PlaySound(0);
+                Destroy(gameObject);
+            }
         }
 
         if (coll.gameObject.CompareTag("mine"))

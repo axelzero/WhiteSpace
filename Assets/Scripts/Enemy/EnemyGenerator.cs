@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGenerator : MonoBehaviour {
+public class EnemyGenerator : MonoBehaviour
+{
+    [HideInInspector]
+    public static EnemyGenerator enemyGenerator;
 
     public GameObject[] enemys;
 
@@ -16,6 +19,7 @@ public class EnemyGenerator : MonoBehaviour {
 
     void Start ()
     {
+        enemyGenerator = this;
         StartCoroutine(Spawn());
 	}
 	

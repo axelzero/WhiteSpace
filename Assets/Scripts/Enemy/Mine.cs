@@ -14,6 +14,8 @@ public class Mine : MonoBehaviour
 
     private float pipMineTimer = 1f;
     private float pipMineTimerStart;
+
+    private int nHP = 3;
     void Start()
     {
         pipMineTimerStart = pipMineTimer;
@@ -24,7 +26,7 @@ public class Mine : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, Ship.transform.position) <= distToActive)
+        if (Vector2.Distance(transform.position, Ship.transform.position) <= distToActive && !Ship.GetComponent<PleyerController>().isOver)
         {
             transform.position = Vector2.MoveTowards(transform.position, Ship.transform.position, Time.deltaTime * speed);
             pipMineTimer -= Time.deltaTime;
@@ -35,7 +37,7 @@ public class Mine : MonoBehaviour
             }
         }
         
-        if (Vector2.Distance(transform.position, Ship.transform.position) <= 0.7f)
+        if (Vector2.Distance(transform.position, Ship.transform.position) <= 0.7f && !Ship.GetComponent<PleyerController>().isOver)
         {
             Ship.GetComponent<PleyerController>().Damage(mineDamage);
             sm.PlaySound(0);
@@ -47,17 +49,22 @@ public class Mine : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("playerBull"))
         {
-            sm.PlaySound(0);
-            Destroy(gameObject);
-            Ship.GetComponent<PleyerController>().AdSc(10);
+            nHP--;
             Destroy(coll.gameObject);
+            if (nHP <= 0)
+            {
+                sm.PlaySound(0);
+                Destroy(gameObject);
+                Ship.GetComponent<PleyerController>().AdSc(10);
+                Destroy(coll.gameObject);
+            }            
         }
 
-        if (coll.gameObject.CompareTag("enemyBull"))
-        {
-            sm.PlaySound(0);
-            Destroy(gameObject);
-            Destroy(coll.gameObject);
-        }
+        //if (coll.gameObject.CompareTag("enemyBull"))
+        //{
+        //    sm.PlaySound(0);
+        //    Destroy(gameObject);
+        //    Destroy(coll.gameObject);
+        //}
     }
 }

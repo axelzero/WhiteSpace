@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class ObjectDestroyer : MonoBehaviour {
 
-
-	
-	void Update ()
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        Destroyer();
-    }
-
-    void Destroyer()
-    {
-        if (transform.position.x <= -10)
+        if (coll.gameObject.CompareTag("destroyer"))
         {
+           // Destroy(coll.gameObject);
             Destroy(gameObject);
         }
     }

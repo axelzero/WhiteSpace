@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SimpleEnemy : MonoBehaviour
 {
+    //public static SimpleEnemy simpleEnemy;
 
     public int lifePoints;
 
     public GameObject bullet;
-    public Transform shootPlace;
+    public Transform[] shootPlace;
+
     public float shootDelay;
+    private float shootDelayStart;  // Сюда будет записано значение, которое будет постоянным для определенного обьекта
 
     public bool isEnemyDead = false;
 
@@ -19,17 +22,43 @@ public class SimpleEnemy : MonoBehaviour
 
     public GameObject Coin;
 
+    private Root root;
+
+    private void Awake()
+    {
+       // simpleEnemy = this;
+    }
+
     private void Start()
     {
-        sm = GameObject.Find("GameZone").GetComponent<SoundManager>();
+        lifePoints = PlayerPrefs.GetInt("lifePoints");
 
-        InvokeRepeating("Shoot", 2, shootDelay);
+        sm = GameObject.Find("GameZone").GetComponent<SoundManager>();
+        shootDelay = PlayerPrefs.GetFloat("shootDelay");
+        //if (Root.rootGame.GameState == Root.Game.Play)   
+        //{
+        //    InvokeRepeating("Shoot", 2, shootDelay);
+        //}
+
+        StartCoroutine(ShootCaroutine(shootDelayStart));
+
         ship = GameObject.Find("Player").GetComponent<PleyerController>();
+    }
+
+    IEnumerator ShootCaroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        while (true)
+        {
+            Shoot();
+            Debug.Log("current time is " + time);
+            yield return new WaitForSeconds(shootDelay);
+        }
     }
 
     private void Update()
     {
-        if (lifePoints == 0 && !isEnemyDead )
+        if (lifePoints == 0 && !isEnemyDead)
         {
             DestroyEnemy();
         }
@@ -51,9 +80,15 @@ public class SimpleEnemy : MonoBehaviour
 
     void Shoot()
     {
-        GameObject b = Instantiate(bullet, shootPlace.position, Quaternion.identity) as GameObject;
-        sm.PlaySound(5);
-        Destroy(b, 3f);
+        if (Root.rootGame.GameState == Root.Game.Play)
+        {
+            for (int i = 0; i < shootPlace.Length; i++)
+            {
+                GameObject b = Instantiate(bullet, shootPlace[i].position, Quaternion.identity) as GameObject;
+                sm.PlaySound(5);
+                Destroy(b, 4f);
+            }
+        }
     }
 
 
@@ -75,11 +110,11 @@ public class SimpleEnemy : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if (col.gameObject.CompareTag("enemyBull"))
-        {
-            Damage(1);
-            sm.PlaySound(1);
-            Destroy(col.gameObject);
-        }
+        //if (col.gameObject.CompareTag("enemyBull"))
+        //{
+        //    Damage(1);
+        //    sm.PlaySound(1);
+        //    Destroy(col.gameObject);
+        //}
     }
 }
