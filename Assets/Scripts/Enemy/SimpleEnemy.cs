@@ -24,6 +24,8 @@ public class SimpleEnemy : MonoBehaviour
 
     private Root root;
 
+    public bool isBoss;
+
     private void Awake()
     {
        // simpleEnemy = this;
@@ -31,10 +33,15 @@ public class SimpleEnemy : MonoBehaviour
 
     private void Start()
     {
-        lifePoints = PlayerPrefs.GetInt("lifePoints");
+        if (!isBoss)
+        {
+            lifePoints = PlayerPrefs.GetInt("lifePoints");
+            shootDelay = PlayerPrefs.GetFloat("shootDelay");
+        }
+
 
         sm = GameObject.Find("GameZone").GetComponent<SoundManager>();
-        shootDelay = PlayerPrefs.GetFloat("shootDelay");
+
         //if (Root.rootGame.GameState == Root.Game.Play)   
         //{
         //    InvokeRepeating("Shoot", 2, shootDelay);
@@ -51,7 +58,6 @@ public class SimpleEnemy : MonoBehaviour
         while (true)
         {
             Shoot();
-            Debug.Log("current time is " + time);
             yield return new WaitForSeconds(shootDelay);
         }
     }
@@ -69,6 +75,10 @@ public class SimpleEnemy : MonoBehaviour
         isEnemyDead = true;
         sm.PlaySound(0);
         SpawnCoin();
+        if (isBoss)
+        {
+            ship.AdSc(500);
+        }
         ship.AdSc(25);
         Destroy(gameObject);
     }

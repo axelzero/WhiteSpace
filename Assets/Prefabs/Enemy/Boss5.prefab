@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16689d2917b784c49a0714d248ca2c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoints: 5000
+  lifePoints: 500
   bullet: {fileID: 1601960132192070, guid: ed498dd52720f794083394a2ae7ccd2e, type: 3}
   shootPlace:
   - {fileID: 3635041675204441805}
@@ -279,11 +279,12 @@ MonoBehaviour:
   - {fileID: 5342588938786105282}
   - {fileID: 2899480735794044015}
   - {fileID: 1376244893309695384}
-  shootDelay: 1
+  shootDelay: 1.75
   isEnemyDead: 0
   ship: {fileID: 0}
   sm: {fileID: 0}
   Coin: {fileID: 1932646054298728, guid: 06613ac1e51c7944fa6e5ab6247476bd, type: 3}
+  isBoss: 1
 --- !u!114 &1735505473032869775
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 562019614350326421}
   - component: {fileID: 562019614350326423}
   - component: {fileID: 562019614350326420}
+  - component: {fileID: 7782685863730826457}
   m_Layer: 5
   m_Name: txtMess
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.24722801, b: 0, a: 1}
+  m_Color: {r: 0.5754717, g: 0, b: 0.016238267, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -81,6 +82,21 @@ MonoBehaviour:
   m_Text: 'BOSS
 
     GET READY !!!'
+--- !u!114 &7782685863730826457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562019614350326426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.8509804}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &562019615084677718
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +247,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 50
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

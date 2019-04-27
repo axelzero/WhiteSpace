@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Unity3d/Projects/WithSpace/WhiteSpace/BoundlessSpace.keystore
+  AndroidKeystoreName: D:/Unity3d/Projects/WithSpace/Boundless-Space/WhiteSpace/BoundlessSpace.keystore
   AndroidKeyaliasName: boundlessspace
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1

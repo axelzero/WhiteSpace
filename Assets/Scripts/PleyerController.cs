@@ -93,14 +93,14 @@ public class PleyerController : MonoBehaviour
         switch (PlayerPrefs.GetInt("ship"))
         {
             case 0:
-                StartOptionsShip(PlayerPrefs.GetInt("Ship1_HPValue"), PlayerPrefs.GetInt("Ship1_ShieldValue"), 5, 3.5f, 40, 0.2f);
+                StartOptionsShip(PlayerPrefs.GetInt("Ship1_HPValue"), PlayerPrefs.GetInt("Ship1_ShieldValue"), 5, 3.5f, 40, 0.1f);
                 //
                 shootDelay = PlayerPrefs.GetFloat("Ship1_ShootDelay");
 
                 //
                 break;
             case 1:
-                StartOptionsShip(PlayerPrefs.GetInt("Ship2_HPValue"), PlayerPrefs.GetInt("Ship2_ShieldValue"), 10, 4f, 40, 0.2f);
+                StartOptionsShip(PlayerPrefs.GetInt("Ship2_HPValue"), PlayerPrefs.GetInt("Ship2_ShieldValue"), 10, 4f, 40, 0.1f);
                 shootDelay = PlayerPrefs.GetFloat("Ship2_ShootDelay");
                 break;
             case 2:
@@ -182,7 +182,7 @@ public class PleyerController : MonoBehaviour
 
     private void ReloadWeapon()
     {
-        if (sliderWeapon.value < sliderWeapon.maxValue && nTimeToStartReload >= 1f)
+        if (sliderWeapon.value < sliderWeapon.maxValue && nTimeToStartReload >= 1f && Root.rootGame.GameState != Root.Game.Dead)
         {
             nTimerWeaponReload += Time.deltaTime;
 

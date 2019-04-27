@@ -1,0 +1,4 @@
+-keep class com.unity.purchasing.**{public *;}
+-keep class com.android.vending.billing.**{*;}
+-dontwarn com.unity.purchasing.**
+-dontwarn com.google.vr.ndk.base.**

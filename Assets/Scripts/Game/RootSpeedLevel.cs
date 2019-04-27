@@ -7,6 +7,16 @@ public class RootSpeedLevel : MonoBehaviour
     private float nTimer = 0f;
     private bool isDone = false;
 
+    public GameObject[] Bosses;
+    public Transform BossStartPosition;
+    private float nTimerBoss;
+    private int nBossNumber = 0;
+
+    //[HideInInspector]
+    //public enum Boss { GetReady, Boss };
+    //[HideInInspector]
+    //public Boss BossState;
+
 
     void Update()
     {
@@ -15,14 +25,31 @@ public class RootSpeedLevel : MonoBehaviour
             nTimer += Time.deltaTime;
             LevelDifficultyUp();
         }
+        BossGo(nBossNumber);
     }
 
-
+    private void BossGo(int numBoss)
+    {
+        if (Root.rootGame.GameState != Root.Game.Dead && nBossNumber < Bosses.Length)
+        {
+            nTimerBoss += Time.deltaTime;
+            if (nTimerBoss >= 60f && nTimerBoss < 64)
+            {
+                Root.rootGame.isBossComming = true;
+            }
+            else if (nTimerBoss >= 65)
+            {
+                GameObject boss = Instantiate(Bosses[numBoss], BossStartPosition.position, Quaternion.identity) as GameObject;
+                nBossNumber++;
+                nTimerBoss = 0;
+            }
+        }
+    }
 
 
     private void LevelDifficultyUp()
     {
-        if (nTimer >= 20f)
+        if (nTimer >= 30f)
         {
             if (PlayerPrefs.GetInt("lifePoints") <= 4)
             {
@@ -38,9 +65,9 @@ public class RootSpeedLevel : MonoBehaviour
                 Debug.Log("EnemySpeed" + EnemySpeed);
             }
 
-            if (PlayerPrefs.GetFloat("shootDelay") > 0.8f)
+            if (PlayerPrefs.GetFloat("shootDelay") > 1f)
             {
-                float EnemyShoot = PlayerPrefs.GetFloat("shootDelay") - 0.1f; //Shoot Speed UP
+                float EnemyShoot = PlayerPrefs.GetFloat("shootDelay") - 0.05f; //Shoot Speed UP
                 PlayerPrefs.SetFloat("shootDelay", EnemyShoot);               //Save
                 Debug.Log("EnemyShoot" + EnemyShoot);
             }

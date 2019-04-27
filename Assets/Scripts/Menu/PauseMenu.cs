@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
 
+    public string SceneName;
+
     public bool Pause = false;
     public bool Sound = false;
     public Color[] soundColor;
@@ -55,7 +57,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneName);
     }
 
     public void MainMenuBtn()

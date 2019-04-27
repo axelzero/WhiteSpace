@@ -93,7 +93,7 @@ public class MainMenu : MonoBehaviour
         }
 
         hs = PlayerPrefs.GetInt("HS", 0);
-        PlayerPrefs.SetInt("coins", 20000);////////////////////////////////////////////////////////////////////////////////////////////////////
+        //PlayerPrefs.SetInt("coins", 20000);////////////////////////////////////////////////////////////////////////////////////////////////////
         coins = PlayerPrefs.GetInt("coins", 0);
 
         if (PlayerPrefs.GetInt("Ship2") == 1)
@@ -517,6 +517,7 @@ public class MainMenu : MonoBehaviour
     public void OpenBestShip()
     {
         countPress++;
+        Debug.Log("pressed");
         if (countPress >= 100)/////////////////////////////////////////////////////////////////////////////////////////////////
         {
             shipUnlock[3] = true;
