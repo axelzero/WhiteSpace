@@ -50,7 +50,7 @@ public class MoveObject : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Ship != null )
+        if (Ship != null  && Root.rootGame.GameState != Root.Game.Dead && Root.rootGame.GameState != Root.Game.Pause)
         {
             try
             {

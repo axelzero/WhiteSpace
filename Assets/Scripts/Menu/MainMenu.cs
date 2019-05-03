@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+using UnityEngine.SocialPlatforms;
 
 public class MainMenu : MonoBehaviour
 {
@@ -42,7 +45,10 @@ public class MainMenu : MonoBehaviour
     public GameObject dollar;
     private int countPress = 0;
 
-   // public GameObject btnNoAds;
+    [HideInInspector]
+    public Vector3 posBtnMoney;
+
+    // public GameObject btnNoAds;
 
     [HideInInspector]
     public static MainMenu mainMenu;
@@ -68,13 +74,49 @@ public class MainMenu : MonoBehaviour
 
     public GameObject HelpAd;
 
+    public void Login()
+    {
+        if (Social.localUser.authenticated)
+        {
+            return;
+        }
+        Social.localUser.Authenticate(( bool success) =>
+        {
+            if (success)
+            {
+                Debug.Log("Authentication successful");
+                string userInfo = "Username: " + Social.localUser.userName +
+                    "\nUser ID: " + Social.localUser.id +
+                    "\nIsUnderage: " + Social.localUser.underage;
+                Debug.Log(userInfo);
+            }
+            else
+                Debug.Log("Authentication failed");
+        });
+    }
+
     void Start()
     {
+       // PlayerPrefs.DeleteAll();
+        posBtnMoney = btnHangar[2].transform.position;
+
+        try
+        {
+            PlayGamesPlatform.Activate();
+            Login();
+        }
+        catch (System.Exception)
+        {
+            
+        }
+
+
+
         mainMenu = this;
 
         StartCheakAd();
 
-        //PlayerPrefs.DeleteAll();
+        
 
         shipNum = PlayerPrefs.GetInt("ship", 0);
 
@@ -134,6 +176,7 @@ public class MainMenu : MonoBehaviour
             WeaponSpeedUp[3].SetActive(true);
             WeaponSpeedUp[7].SetActive(true);
             WeaponSpeedUp[11].SetActive(true);
+            btnHangar[2].SetActive(false);
         }
         else
         {
@@ -213,6 +256,22 @@ public class MainMenu : MonoBehaviour
         costOfHPPrice[3].text = PlayerPrefs.GetInt("Ship4_HPPrice").ToString();
 
         CheakOnMaxValueSpeedWeapon();
+
+        txtCoins.text = PlayerPrefs.GetInt("coins").ToString();
+
+        
+
+        //if (PlayerPrefs.GetInt("coins") > 0)
+        //{
+        //    Social.ReportScore(PlayerPrefs.GetInt("coins"), Achivs.leaderBoardRichestMan, (bool success) =>
+        //    {
+        //        if (success) Debug.Log("Добавлен в таблицу лидеров leaderBoardRichestMan");
+        //    });
+        //}
+
+        txtHs.text = "HIGHT SCORE: " + hs.ToString();
+
+        
     }
 
     private void CheakOnMaxValueSpeedWeapon()  // Ограничения по покупкам
@@ -308,8 +367,15 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        txtCoins.text = PlayerPrefs.GetInt("coins").ToString();
-        txtHs.text = "HIGHT SCORE: " + hs.ToString();
+        if (PlayerPrefs.GetInt("coins") > 0)
+        {
+            Social.ReportScore(PlayerPrefs.GetInt("coins"), Achivs.leaderBoardRichestMan, (bool success) =>
+            {
+                if (success) Debug.Log("Добавлен в таблицу лидеров leaderBoardRichestMan");
+            });
+        }
+        //txtCoins.text = PlayerPrefs.GetInt("coins").ToString();
+        //txtHs.text = "HIGHT SCORE: " + hs.ToString();
     }
 
     public void ChangeShip(int num)
@@ -322,7 +388,7 @@ public class MainMenu : MonoBehaviour
                 Selector[2].color = colors[1];
                 Selector[3].color = colors[1];
                 PlayerAtStartMenu.sprite = ships[num];
-                SetBtnActiveInHangar(true);
+                SetBtnActiveInHangar(true, false);
 
                 shipNum = 0;
                 break;
@@ -335,12 +401,12 @@ public class MainMenu : MonoBehaviour
                 if (shipUnlock[1] == false)
                 {
                     Selector[1].color = colors[2];          //Если не куплено - задник другого цвета
-                    SetBtnActiveInHangar(false);
+                    SetBtnActiveInHangar(false, false);
                 }
                 else
                 {
                     Selector[1].color = colors[0];
-                    SetBtnActiveInHangar(true);
+                    SetBtnActiveInHangar(true, false);
                 }
                 break;
             case 2:
@@ -350,12 +416,12 @@ public class MainMenu : MonoBehaviour
                 if (shipUnlock[2] == false)
                 {
                     Selector[2].color = colors[2];
-                    SetBtnActiveInHangar(false);
+                    SetBtnActiveInHangar(false, false);
                 }
                 else
                 {
                     Selector[2].color = colors[0];
-                    SetBtnActiveInHangar(true);
+                    SetBtnActiveInHangar(true, false);
                 }
                 Selector[3].color = colors[1];
                 PlayerAtStartMenu.sprite = ships[num];
@@ -370,12 +436,12 @@ public class MainMenu : MonoBehaviour
                 if (shipUnlock[3] == false)
                 {
                     Selector[3].color = colors[2];
-                    SetBtnActiveInHangar(false);
+                    SetBtnActiveInHangar(false, true);
                 }
                 else
                 {
                     Selector[3].color = colors[0];
-                    SetBtnActiveInHangar(true);
+                    SetBtnActiveInHangar(true,false);
                 }
                 PlayerAtStartMenu.sprite = ships[num];
                 shipNum = 3;
@@ -383,17 +449,30 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    private void SetBtnActiveInHangar(bool isBack)
+    private void SetBtnActiveInHangar(bool isBack, bool isPayNew)
     {
         if (isBack)
         {
             btnHangar[0].SetActive(true);
             btnHangar[1].SetActive(false);
+            //btnHangar[2].SetActive(false);
+            btnHangar[2].transform.position = posBtnMoney;
         }
         else
         {
+            
             btnHangar[0].SetActive(false);          //Кнопка назад исчезнет
-            btnHangar[1].SetActive(true);           //Появится кнопку купить
+            if (isPayNew)
+            {
+                btnHangar[1].SetActive(false);
+                btnHangar[2].transform.position = btnHangar[0].transform.position;       //Появится кнопку купить платный корабль
+            }
+            else
+            {
+                btnHangar[2].transform.position = posBtnMoney;
+                btnHangar[1].SetActive(true);           //Появится кнопку купить
+            }
+            
         }
     }
 
@@ -416,6 +495,7 @@ public class MainMenu : MonoBehaviour
                         WeaponSpeedUp[1].SetActive(true);
                         WeaponSpeedUp[5].SetActive(true);
                         WeaponSpeedUp[9].SetActive(true);
+                        AchivsCommands.GetTheAchiv(Achivs.FirstShip);
                     }
                 }
                 break;
@@ -434,6 +514,7 @@ public class MainMenu : MonoBehaviour
                         WeaponSpeedUp[2].SetActive(true);
                         WeaponSpeedUp[6].SetActive(true);
                         WeaponSpeedUp[10].SetActive(true);
+                        AchivsCommands.GetTheAchiv(Achivs.SecondShip);
                     }
                 }
                 break;
@@ -495,6 +576,7 @@ public class MainMenu : MonoBehaviour
 
     public void BtnExit()
     {
+        PlayGamesPlatform.Instance.SignOut();
         Application.Quit();
     }
 
@@ -520,6 +602,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("pressed");
         if (countPress >= 100)/////////////////////////////////////////////////////////////////////////////////////////////////
         {
+            btnHangar[2].transform.position = posBtnMoney;
             shipUnlock[3] = true;
             PlayerPrefs.SetInt("Ship4", 1);  //сохраняем, что самолет 4 куплен
             ChangeShip(3);
@@ -528,6 +611,7 @@ public class MainMenu : MonoBehaviour
             WeaponSpeedUp[3].SetActive(true);
             WeaponSpeedUp[7].SetActive(true);
             WeaponSpeedUp[11].SetActive(true);
+            AchivsCommands.GetTheAchiv(Achivs.ThirdShip);
         }
     }
 
@@ -536,6 +620,21 @@ public class MainMenu : MonoBehaviour
         if (PlayerPrefs.GetInt("noads") == 1)
         {
             btnAd.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("EnemyKilled") == 10)
+        {
+            AchivsCommands.GetTheAchiv(GPGSIds.achievement_kill_10_enemys);
+        }
+
+        if (PlayerPrefs.GetInt("EnemyKilled") == 50)
+        {
+            AchivsCommands.GetTheAchiv(GPGSIds.achievement_kill_50_enemys);
+        }
+
+        if (PlayerPrefs.GetInt("EnemyKilled") == 100)
+        {
+            AchivsCommands.GetTheAchiv(GPGSIds.achievement_kill_100_enemys);
         }
     }
 
@@ -713,7 +812,7 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void BtnHPUp(string nameShipPlayerPrefs)  //Покупка улучшения щита
+    public void BtnHPUp(string nameShipPlayerPrefs)  //Покупка улучшения HP
     {
         //IF coins > Price
         if (PlayerPrefs.GetInt(nameShipPlayerPrefs) > 599)
@@ -811,5 +910,15 @@ public class MainMenu : MonoBehaviour
     public void BtnHelpExit()
     {
         HelpAd.SetActive(false);
+    }
+
+    public void BtnAchiv()
+    {
+        Social.ShowAchievementsUI();
+    }
+
+    public void BtnLeaderBoard()
+    {
+        Social.ShowLeaderboardUI();
     }
 }

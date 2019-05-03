@@ -80,6 +80,9 @@ public class SimpleEnemy : MonoBehaviour
             ship.AdSc(500);
         }
         ship.AdSc(25);
+        int countKilled = PlayerPrefs.GetInt("EnemyKilled", 0);
+        countKilled++;
+        PlayerPrefs.SetInt("EnemyKilled", countKilled);
         Destroy(gameObject);
     }
 

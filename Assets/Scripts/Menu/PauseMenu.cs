@@ -1,13 +1,12 @@
-﻿using System.Collections;
+﻿using GooglePlayGames;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour {
-
-    public string SceneName;
-
+public class PauseMenu : MonoBehaviour
+{
     public bool Pause = false;
     public bool Sound = false;
     public Color[] soundColor;
@@ -21,6 +20,10 @@ public class PauseMenu : MonoBehaviour {
     public Sprite[] spritesSoundOnOff;
     public Image imgSound;
 
+    [Space(20)]
+    [Header("Loading Bar")]
+    public GameObject LoadingBar;
+    public string SceneName;
     private void Start()
     {
         if (AudioListener.volume == 0)
@@ -39,6 +42,7 @@ public class PauseMenu : MonoBehaviour {
     {
         if (Pause)
         {
+            Root.rootGame.GameState = Root.Game.Play;
             PausePanel.SetActive(false);
             Time.timeScale = 1;
             Pause = false;
@@ -47,6 +51,7 @@ public class PauseMenu : MonoBehaviour {
         }
         if (!Pause)
         {
+            Root.rootGame.GameState = Root.Game.Pause;
             PausePanel.SetActive(true);
             Time.timeScale = 0.0001f;
             Pause = true;
@@ -57,13 +62,17 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneName);
+        LoadingBar.GetComponent<Loading>().sceneName = SceneName;
+        LoadingBar.SetActive(true);
+        //SceneManager.LoadScene(SceneName);
     }
 
     public void MainMenuBtn()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        LoadingBar.GetComponent<Loading>().sceneName = "MainMenu";
+        LoadingBar.SetActive(true);
+        //SceneManager.LoadScene("MainMenu");
     }
 
     public void SoundBtn()
@@ -87,6 +96,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void ExitBtn()
     {
+        PlayGamesPlatform.Instance.SignOut();
         Application.Quit();
     }
 }

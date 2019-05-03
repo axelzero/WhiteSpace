@@ -29,6 +29,7 @@ public class RewardedAds : MonoBehaviour
                     int coins = PlayerPrefs.GetInt("coins");
                     coins += 100;
                     PlayerPrefs.SetInt("coins", coins);
+                    coinsTxt.text = coins.ToString();
                 }
                 //
                 // YOUR CODE TO REWARD THE GAMER

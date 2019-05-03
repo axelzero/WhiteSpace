@@ -1,0 +1,376 @@
+<aars>
+  <explodeData>
+    <aar>android.arch.core.common-1.0.0</aar>
+    <modificationTime>0001-01-01T00:00:00.0000000+02:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/android.arch.core.common-1.0.0.jar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>android.arch.lifecycle.common-1.0.0</aar>
+    <modificationTime>0001-01-01T00:00:00.0000000+02:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/android.arch.lifecycle.common-1.0.0.jar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>android.arch.lifecycle.runtime-1.0.0</aar>
+    <modificationTime>2019-04-28T14:24:22.2322953+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/android.arch.lifecycle.runtime-1.0.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-annotations-26.1.0</aar>
+    <modificationTime>0001-01-01T00:00:00.0000000+02:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-annotations-26.1.0.jar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-compat-26.1.0</aar>
+    <modificationTime>2019-04-28T14:24:22.2612154+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-compat-26.1.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-core-ui-26.1.0</aar>
+    <modificationTime>2019-04-28T14:24:22.2766838+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-core-ui-26.1.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-core-utils-26.1.0</aar>
+    <modificationTime>2019-04-28T14:24:22.2886531+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-core-utils-26.1.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-fragment-26.1.0</aar>
+    <modificationTime>2019-04-28T14:24:22.2996226+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-fragment-26.1.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-media-compat-26.1.0</aar>
+    <modificationTime>2019-04-28T14:24:22.3105940+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-media-compat-26.1.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-v4-26.1.0</aar>
+    <modificationTime>2019-04-28T14:24:22.3215729+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-v4-26.1.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-ads-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.3405147+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-ads-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-ads-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.3544763+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-ads-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-ads-lite-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.3669558+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-ads-lite-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-ads-lite-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.3779271+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-ads-lite-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-auth-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.3889031+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-auth-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-auth-api-phone-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4008673+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-auth-api-phone-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-auth-api-phone-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4118360+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-auth-api-phone-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-auth-base-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4208118+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-auth-base-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-auth-base-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4297880+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-auth-base-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-base-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4427533+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-base-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-base-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4527273+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-base-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-basement-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4666885+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-basement-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-basement-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4816572+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-basement-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-drive-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.4946146+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-drive-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-drive-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5055843+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-drive-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-games-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5175527+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-games-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-games-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5285237+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-games-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-gass-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5366245+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-gass-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-gass-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5444808+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-gass-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-nearby-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5654248+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-nearby-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-nearby-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5745462+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-nearby-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-tasks-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5843744+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-tasks-license-12.0.1</aar>
+    <modificationTime>2019-04-28T14:24:22.5913581+03:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-license-12.0.1.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.games.gpgs-plugin-support-0.9.50</aar>
+    <modificationTime>0001-01-01T00:00:00.0000000+02:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.BigStudent.WhiteSpace</bundleId>
+    <path>Assets/Plugins/Android\com.google.games.gpgs-plugin-support-0.9.50</path>
+    <targetAbi>fat</targetAbi>
+    <gradleBuildEnabled>false</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+</aars>

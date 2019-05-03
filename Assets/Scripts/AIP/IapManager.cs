@@ -33,6 +33,7 @@ public class IapManager : MonoBehaviour, IStoreListener
 
         // Create a builder, first passing in a suite of Unity provided stores.
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
+        
         UnityPurchasing.Initialize(this, builder);
     }
 
@@ -129,6 +130,7 @@ public class IapManager : MonoBehaviour, IStoreListener
             MainMenu.mainMenu.WeaponSpeedUp[3].SetActive(true);
             MainMenu.mainMenu.WeaponSpeedUp[7].SetActive(true);
             MainMenu.mainMenu.WeaponSpeedUp[11].SetActive(true);
+            AchivsCommands.GetTheAchiv(Achivs.ThirdShip);
         }
         // Or ... a non-consumable product has been purchased by this user.
         else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_NO_ADS, StringComparison.Ordinal))
@@ -136,6 +138,7 @@ public class IapManager : MonoBehaviour, IStoreListener
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             PlayerPrefs.SetInt("noads", 1);
             MainMenu.mainMenu.btnAd.SetActive(false);
+            AchivsCommands.GetTheAchiv(Achivs.NoAd);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_GetCoins, StringComparison.Ordinal))
         {
@@ -144,12 +147,14 @@ public class IapManager : MonoBehaviour, IStoreListener
             int coin = PlayerPrefs.GetInt("coins") + 20000;
             PlayerPrefs.SetInt("coins", coin);
             MainMenu.mainMenu.txtCoins.text = coin.ToString();
+            AchivsCommands.GetTheAchiv(Achivs.Get20000Coins);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_Help, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             PlayerPrefs.SetInt("help", 1);
             MainMenu.mainMenu.HelpAd.SetActive(true);
+            AchivsCommands.GetTheAchiv(Achivs.Benefactor);
         }
         // Or ... an unknown product has been purchased by this user. Fill in additional products here....
         else

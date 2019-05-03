@@ -8,7 +8,7 @@ public  class Root : MonoBehaviour
     [HideInInspector]
     public static Root rootGame;
     [HideInInspector]
-    public enum Game { Play, Dead };
+    public enum Game { Play, Dead, Pause };
     [HideInInspector]
     public Game GameState;
 
@@ -48,6 +48,21 @@ public  class Root : MonoBehaviour
                 bossMessage.SetActive(false);
                 timerMessage = 0;
             }
+        }
+
+        if (PlayerPrefs.GetInt("EnemyKilled") == 10)
+        {
+            AchivsCommands.GetTheAchiv(GPGSIds.achievement_kill_10_enemys);
+        }
+
+        if (PlayerPrefs.GetInt("EnemyKilled") == 50)
+        {
+            AchivsCommands.GetTheAchiv(GPGSIds.achievement_kill_50_enemys);
+        }
+
+        if (PlayerPrefs.GetInt("EnemyKilled") == 100)
+        {
+            AchivsCommands.GetTheAchiv(GPGSIds.achievement_kill_100_enemys);
         }
     }
 }

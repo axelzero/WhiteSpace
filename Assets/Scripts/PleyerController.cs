@@ -198,7 +198,7 @@ public class PleyerController : MonoBehaviour
     {
         Root.rootGame.GameState = Root.Game.Dead;
         sm.PlaySound(8, 1f);
-
+        sliderWeapon.value = 0;
         deadCount++;
         isOver = true;
         Save();
@@ -344,10 +344,15 @@ public class PleyerController : MonoBehaviour
     void Save()
     {
         PlayerPrefs.SetInt("coins", coinsCount);
+
         PlayerPrefs.SetInt("NewScore", scoreCount);
         if (!PlayerPrefs.HasKey("HS"))
         {
             PlayerPrefs.SetInt("HS", scoreCount);
+            Social.ReportScore(scoreCount, Achivs.leaderBoardHightScore, (bool success) =>
+            {
+                if (success) Debug.Log("Добавлен в таблицу лидеров");
+            });
         }
         else
         {
@@ -355,6 +360,10 @@ public class PleyerController : MonoBehaviour
             if (hs < scoreCount)
             {
                 PlayerPrefs.SetInt("HS", scoreCount);
+                Social.ReportScore(scoreCount, Achivs.leaderBoardHightScore, (bool success) =>
+                {
+                    if (success) Debug.Log("Добавлен в таблицу лидеров");
+                });
             }
         }
         PlayerPrefs.SetInt("DC", deadCount);

@@ -354,6 +354,18 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.64.0">
+      <HintPath>D:/Unity3d/Projects/WithSpace/Boundless-Space/WhiteSpace/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.64.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.64.0">
+      <HintPath>D:/Unity3d/Projects/WithSpace/Boundless-Space/WhiteSpace/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.64.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>D:/Unity3d/Projects/WithSpace/Boundless-Space/WhiteSpace/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.64.0">
+      <HintPath>D:/Unity3d/Projects/WithSpace/Boundless-Space/WhiteSpace/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.64.0.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
       <HintPath>D:/Unity3d/Projects/WithSpace/Boundless-Space/WhiteSpace/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
     </Reference>
